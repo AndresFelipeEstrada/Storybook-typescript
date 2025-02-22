@@ -1,0 +1,25 @@
+{
+  "name": "storybook-web-components",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "^3.2.4",
+    "@storybook/addon-essentials": "^8.5.8",
+    "@storybook/addon-interactions": "^8.5.8",
+    "@storybook/blocks": "^8.5.8",
+    "@storybook/html": "^8.5.8",
+    "@storybook/html-vite": "^8.5.8",
+    "@storybook/test": "^8.5.8",
+    "storybook": "^8.5.8",
+    "typescript": "~5.7.2",
+    "vite": "^6.1.0"
+  }
+}
