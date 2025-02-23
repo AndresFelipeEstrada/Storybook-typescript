@@ -1,6 +1,6 @@
 import "./button.css";
 
-type ButtonStyle = "outlined" | "filled" | "ghost";
+type ButtonStyle = "outlined" | "filled";
 
 type ButtonSize = "small" | "medium" | "large";
 
@@ -9,17 +9,19 @@ export interface ButtonOptions {
   size?: ButtonSize;
   label?: string;
 }
+
 export const createButton = ({
-  style = "outlined",
-  size = "small",
-  label = "",
+  style = "filled",
+  size = "large",
+  label = "Button",
 }: ButtonOptions): HTMLButtonElement => {
   const button = document.createElement("button");
   button.type = "submit";
   button.role = "button";
   button.innerHTML = label;
 
-  // Añadir clases según estilo y tamaño
-  button.className = `${style}-${size}`;
+  button.className = ["button", `button--${style}`, `button--${size}`].join(
+    " ",
+  );
   return button;
 };

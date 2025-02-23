@@ -13,6 +13,6 @@ const Template: StoryFn<ButtonOptions> = ({
 };
 
 export const Default = Template.bind({});
-Default.args = {
-  label: "Button",
-};
+// Default.args = {
+//   label: "Button",
+// };
