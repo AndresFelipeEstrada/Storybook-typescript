@@ -13,6 +13,7 @@ export const createCard = ({
   title,
   description,
 }: CardOptions): HTMLDivElement => {
+  const wrapper = document.createElement("div");
   const card = document.createElement("div");
   const avatarContainer = document.createElement("div");
   const cardContent = document.createElement("div");
@@ -20,6 +21,7 @@ export const createCard = ({
   const h3 = document.createElement("h3");
   const p = document.createElement("p");
 
+  wrapper.appendChild(card);
   card.appendChild(avatarContainer);
   card.appendChild(cardContent);
   avatarContainer.appendChild(img);
@@ -29,9 +31,10 @@ export const createCard = ({
   h3.textContent = title;
   p.textContent = description;
 
+  wrapper.className = "wrapper";
   card.className = ["card", `card-${size}`].join(" ");
   avatarContainer.className = "card__avatar";
   cardContent.className = "card__content";
 
-  return card;
+  return wrapper;
 };
