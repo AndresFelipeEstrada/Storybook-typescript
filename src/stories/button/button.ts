@@ -11,14 +11,14 @@ export interface ButtonOptions {
 }
 
 export const createButton = ({
-  style = "filled",
   size = "large",
+  style = "filled",
   label = "Button",
 }: ButtonOptions): HTMLButtonElement => {
   const button = document.createElement("button");
   button.type = "submit";
   button.role = "button";
-  button.innerHTML = label;
+  button.textContent = label;
 
   button.className = ["button", `button--${style}`, `button--${size}`].join(
     " ",
