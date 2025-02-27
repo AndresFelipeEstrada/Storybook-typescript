@@ -9,7 +9,7 @@ export interface CardOptions {
 }
 
 export const createCard = ({
-  size = "small",
+  size = "medium",
   title,
   description,
 }: CardOptions): HTMLDivElement => {
@@ -32,7 +32,7 @@ export const createCard = ({
   p.textContent = description;
 
   wrapper.className = "wrapper";
-  card.className = ["card", `card-${size}`].join(" ");
+  card.className = ["card", `card--${size}`].join(" ");
   avatarContainer.className = "card__avatar";
   cardContent.className = "card__content";
 

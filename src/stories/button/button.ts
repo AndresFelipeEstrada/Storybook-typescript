@@ -17,11 +17,8 @@ export const createButton = ({
 }: ButtonOptions): HTMLButtonElement => {
   const button = document.createElement("button");
   button.type = "submit";
-  button.role = "button";
   button.textContent = label;
 
-  button.className = ["button", `button--${style}`, `button--${size}`].join(
-    " ",
-  );
+  button.classList.add("button", `button--${style}`, `button--${size}`);
   return button;
 };
