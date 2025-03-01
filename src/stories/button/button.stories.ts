@@ -1,8 +1,20 @@
 import type { Meta, StoryFn } from "@storybook/html";
 import { ButtonOptions, createButton } from "./button";
+import { fn } from "@storybook/test";
+import { withActions } from "@storybook/addon-actions/decorator";
+import { ClickAndCheckClassTest, ClickTest } from "./button.stories.test";
 
 const meta: Meta<ButtonOptions> = {
   title: "Design System/Atoms/Button",
+  args: {
+    onClick: fn(),
+  },
+  parameters: {
+    layout: "centered",
+    actions: {
+      handles: ["mouseover", ".button"],
+    },
+  },
   decorators: [
     (story) => {
       const decorator = document.createElement("div");
@@ -16,8 +28,8 @@ const meta: Meta<ButtonOptions> = {
       }
       return decorator;
     },
+    withActions,
   ],
-  tags: ["autodocs"],
   argTypes: {
     label: {
       name: "label",
@@ -52,6 +64,10 @@ const meta: Meta<ButtonOptions> = {
         type: "radio",
       },
     },
+    onClick: {
+      description: "Event",
+      action: "clicked",
+    },
   },
 };
 
@@ -70,3 +86,5 @@ Default.args = {
   size: "large",
   style: "filled",
 };
+Default.play = ClickTest;
+Default.play = ClickAndCheckClassTest;
